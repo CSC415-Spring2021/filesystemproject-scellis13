@@ -306,8 +306,9 @@ void remove_entry(myVCB_ptr ptr, char * file_name){
         printf("\033[0m:");
         printf(" Removing directory '%s' will remove itself and all its subfolders and files.", file_name);
         printf("\nEnter the character 'Y' to continue or any other key to cancel deletion: ");
-        gets(user_command);
-
+        fgets(user_command, sizeof(user_command), stdin);
+        user_command[strcspn(user_command, "\n")] = 0;
+        
         if(strcmp(user_command, "Y") != 0) {
         	printf("remove_entry: Canceling directory removal.\n");
 			free(de_list);
