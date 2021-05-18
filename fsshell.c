@@ -65,7 +65,8 @@ int main(int argc, char *argv[]) {
         printf("\033[1;34m");
         print_dir(ptr);
         printf("\033[0m$ ");
-        gets(user_command);
+        fgets(user_command, sizeof(user_command), stdin);
+        user_command[strcspn(user_command, "\n")] = 0;
         
         if(strlen(user_command) < 100) write_history(ptr, user_command);
 
