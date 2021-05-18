@@ -93,7 +93,7 @@ void init_freespace(myVCB_ptr ptr){
 	
 	// printf("\n\n\n****TOTAL DATA BLOCKS LOOPING: %d\n\n\n", ptr->total_data_blocks);
 	for(int i = 0; i < (ptr->total_data_blocks); i++){
-		(frsp_ptr)->data_blocks_map[i] = malloc(sizeof(int));
+		//(frsp_ptr)->data_blocks_map[i] = malloc(sizeof(int));
 		(frsp_ptr)->data_blocks_map[i] = 0; //0 is free, 1 is used
 	}
 
